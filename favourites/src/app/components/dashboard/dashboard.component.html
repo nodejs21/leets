@@ -1,0 +1,48 @@
+<div class="card card-body mb-3">
+  <h2 class="text-center">Notify Me Of</h2>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <div class="form-group">
+          <label>Sport Name</label>
+          <input 
+            type="text" 
+            [(ngModel)]="sport.name" 
+            class="form-control" 
+            name="sport"
+            #sport.name="ngModel"
+          >
+        </div>
+      <div class="form-group">
+          <label>Team Name</label>
+          <input 
+            type="text" 
+            [(ngModel)]="sport.team.name" 
+            class="form-control" 
+            name="team"
+            #team.name="ngModel"
+          >
+        </div>
+    <button class="btn btn-block btn-primary mb-3"> Notify Me</button>
+  </form>
+</div>
+<div class="row mt-5">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Latest News</h4>
+          <ul>
+            <li>This is first Item</li>
+            <li>This is first Item</li>
+            <li>This is first Item</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Latest Matches</h4>
+          <p class="card-text text-center">Team 3 VS Team 2</p>
+        </div>
+      </div>
+    </div>
+  </div>

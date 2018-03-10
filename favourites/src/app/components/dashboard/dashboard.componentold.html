@@ -1,0 +1,43 @@
+<div class="row">
+  <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+    <div class="col-md-2">
+      <div class="form-group">
+        <label>Sport</label>
+        <input type="text" class="form-control" name="sport" #sport="ngModel" placeholder="Enter your sport">
+        </div>
+    </div>
+    <div class="col-md-8">
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control"
+          name="lastName" #userLastName="ngModel"  placeholder="Enter your team">
+      </div>
+    </div>
+    <div class="col-md-2">
+        <input type="submit" value="Submit" class="btn btn-primary btn-block">
+    </div>
+  </form>
+</div>
+
+<div class="row mt-5">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Latest News</h4>
+        <ul>
+          <li>This is first Item</li>
+          <li>This is first Item</li>
+          <li>This is first Item</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Latest Matches</h4>
+        <p class="card-text text-center">Team 3 VS Team 2</p>
+      </div>
+    </div>
+  </div>
+</div>
