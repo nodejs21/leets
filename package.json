@@ -6,9 +6,15 @@
   "version": "",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "dom-parser": "^0.1.5",
     "express": "^4.16.2",
+    "html-parse-stringify": "^1.0.2",
+    "htmlparser2": "^3.9.2",
     "jsdom": "^11.6.2",
     "mongoose": "^5.0.9",
-    "nodemon": "^1.17.1"
+    "node-fetch": "^2.1.1",
+    "nodemon": "^1.17.1",
+    "select-dom": "^4.1.1",
+    "xmldom": "^0.1.27"
   }
 }
