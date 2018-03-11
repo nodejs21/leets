@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "ng build -prod"
   },
   "name": "",
   "version": "",

@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 
@@ -14,7 +15,7 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/', index);
+app.use('/', express.static(path.join(__dirname, './client/dist/')));
 // app.use('/signup', signup);
 // app.use('/login', login);
 app.use('/sports', sports);
