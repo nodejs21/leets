@@ -7,7 +7,7 @@ const app = express();
 var index = require('./routes/index');
 // var signup = require('./routes/signup');
 // var login = require('./routes/login');
-var sports = require('./routes/sports');
+// var sports = require('./routes/sports');
 var favourites = require('./routes/favourites');
 
 var port = process.env.PORT || 3000;
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', express.static(path.join(__dirname, './client/dist/')));
 // app.use('/signup', signup);
 // app.use('/login', login);
-app.use('/sports', sports);
+// app.use('/sports', sports);
 app.use('/favourites', favourites);
 
 app.listen(port, function(err) {
