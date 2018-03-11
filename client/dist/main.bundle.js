@@ -173,12 +173,15 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_settings_service__ = __webpack_require__("../../../../../src/app/services/settings.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_feed_feed_component__ = __webpack_require__("../../../../../src/app/components/feed/feed.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_api_service__ = __webpack_require__("../../../../../src/app/services/api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_crawl_crawl_component__ = __webpack_require__("../../../../../src/app/components/crawl/crawl.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -224,7 +227,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_18__components_register_register_component__["a" /* RegisterComponent */],
                 __WEBPACK_IMPORTED_MODULE_19__components_settings_settings_component__["a" /* SettingsComponent */],
                 __WEBPACK_IMPORTED_MODULE_20__components_not_found_not_found_component__["a" /* NotFoundComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__components_feed_feed_component__["a" /* FeedComponent */]
+                __WEBPACK_IMPORTED_MODULE_25__components_feed_feed_component__["a" /* FeedComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__components_crawl_crawl_component__["a" /* CrawlComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__components_crawl_crawl_component__["b" /* SafePipe */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -535,6 +540,86 @@ var ClientsComponent = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/crawl/crawl.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/crawl/crawl.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<iframe width=\"100%\" height=\"300\" [src]=\"url | safe\"></iframe>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/crawl/crawl.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CrawlComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SafePipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CrawlComponent = (function () {
+    function CrawlComponent() {
+        this.url = "https://s.codepen.io/m4kamran008/debug/rdaXKr/VGAWNnmpxopr";
+    }
+    CrawlComponent.prototype.ngOnInit = function () {
+    };
+    CrawlComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-crawl',
+            template: __webpack_require__("../../../../../src/app/components/crawl/crawl.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/crawl/crawl.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CrawlComponent);
+    return CrawlComponent;
+}());
+
+var SafePipe = (function () {
+    function SafePipe(sanitizer) {
+        this.sanitizer = sanitizer;
+    }
+    SafePipe.prototype.transform = function (url) {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    };
+    SafePipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'safe' }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DomSanitizer */]])
+    ], SafePipe);
+    return SafePipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/dashboard/dashboard.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -727,7 +812,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/feed/feed.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row mt-2\">\n  <div class=\"col-md-4\">\n    <div class=\"card\">\n      <img class=\"card-img-top\" src=\"\" alt=\"\">\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Latest News</h4>\n        <a href=\"#\" class=\"list-group-item list-group-item-action\">Pakistan's Zidane: Cristiano Ronaldo from another galaxy<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n        <a href=\"#\" class=\"list-group-item list-group-item-action\">Shahid Afridi out on first ball<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n        <a href=\"#\" class=\"list-group-item list-group-item-action\">PSL going ham<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n      </div>\n    </div>\n  </div>\n\n    <div class=\"col-md-6\">\n      <div class=\"card\">\n        <img class=\"card-img-top\" src=\"\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">Latest Matches</h4>\n            <div class=\"list-group\">\n                <a href=\"#\" class=\"list-group-item list-group-item-action\">Manchester United\t\t\n                    2 - 1\n                      Pakistan<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n                <a href=\"#\" class=\"list-group-item list-group-item-action\">United\t\t\n                    2 - 1\n                      Pakistan<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n                <a href=\"#\" class=\"list-group-item list-group-item-action\">Pakistan\t\t\n                    2 - 1\n                      Barca<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n            </div>\n        </div>\n      </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"row mt-2\">\n  <div class=\"col-md-10\">\n    <div class=\"card\" style=\"height:80%\">\n      <app-crawl></app-crawl>\n      <!-- <img class=\"card-img-top\" src=\"\" alt=\"\">\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Latest News</h4>\n        <a href=\"#\" class=\"list-group-item list-group-item-action\">Pakistan's Zidane: Cristiano Ronaldo from another galaxy<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n        <a href=\"#\" class=\"list-group-item list-group-item-action\">Shahid Afridi out on first ball<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n        <a href=\"#\" class=\"list-group-item list-group-item-action\">PSL going ham<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n      </div> -->\n    </div>\n  </div>\n\n    <!-- <div class=\"col-md-6\">\n      <div class=\"card\">\n        <img class=\"card-img-top\" src=\"\" alt=\"\">\n        <div class=\"card-body\">\n          <h4 class=\"card-title\">Latest Matches</h4>\n            <div class=\"list-group\">\n                <a href=\"#\" class=\"list-group-item list-group-item-action\">Manchester United\t\t\n                    2 - 1\n                      Pakistan<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n                <a href=\"#\" class=\"list-group-item list-group-item-action\">United\t\t\n                    2 - 1\n                      Pakistan<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n                <a href=\"#\" class=\"list-group-item list-group-item-action\">Pakistan\t\t\n                    2 - 1\n                      Barca<span style=\"float: right\"><i class=\"fa fa-scissors\" aria-hidden=\"true\"></i></span></a>\n            </div>\n        </div>\n      </div>\n    </div> -->\n</div>\n"
 
 /***/ }),
 
